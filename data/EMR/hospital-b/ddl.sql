@@ -53,7 +53,7 @@ CREATE TABLE providers (
 );
 
 
--- 5. Transactions Table:
+-- 5. Transactions Table:-
 
 CREATE TABLE transactions (
     TransactionID nvarchar(50) NOT NULL,
