@@ -65,7 +65,7 @@ with DAG(
     tags=["pyspark", "dataproc", "etl", "marvel"]
 ) as dag:
     
-    # define the Tasks
+    # define the Tasks properly
     start_cluster = DataprocStartClusterOperator(
         task_id="start_cluster",
         project_id=PROJECT_ID,
