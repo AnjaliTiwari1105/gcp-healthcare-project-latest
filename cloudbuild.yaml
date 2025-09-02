@@ -18,5 +18,5 @@ options:
 
 substitutions:
   _DAGS_DIRECTORY: "workflows/"
-  _DAGS_BUCKET: "us-central1-test-composer-8bf50601-bucket" # Composer bucket updated
+  _DAGS_BUCKET: "europe-west1-test-composer1-668e8532-bucket" # Composer bucket updated
   _DATA_DIRECTORY: "data/"
