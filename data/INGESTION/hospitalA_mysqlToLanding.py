@@ -104,7 +104,7 @@ def move_existing_files_to_archive(table):
         
 #------------------------------------------------------------------------------------------------------------------##
 
-# Function to Get Latest Watermark from BigQuery Audit Table
+## Function to Get Latest Watermark from BigQuery Audit Table
 def get_latest_watermark(table_name):
     query = f"""
         SELECT MAX(load_timestamp) AS latest_timestamp
