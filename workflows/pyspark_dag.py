@@ -108,5 +108,5 @@ with DAG(
         cluster_name=CLUSTER_NAME,
     )
 
-# define the task dependencies
+# define the task dependencies - issue is in cptcodes
 start_cluster >> pyspark_task_1 >> pyspark_task_2 >> pyspark_task_3 >> pyspark_task_4 >> stop_cluster
