@@ -6,7 +6,7 @@ from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobO
 
 # Define constants
 PROJECT_ID = "gcp-healthcare-project"
-#LOCATION = "US"
+LOCATION = "europe-west1"
 SQL_FILE_PATH_1 = "/home/airflow/gcs/data/BQ/bronze.sql"
 SQL_FILE_PATH_2 = "/home/airflow/gcs/data/BQ/silver.sql"
 SQL_FILE_PATH_3 = "/home/airflow/gcs/data/BQ/gold.sql"
@@ -52,6 +52,7 @@ with DAG(
                 "priority": "BATCH",
             }
         },
+        location=LOCATION,  # ✅ Add this line
     )
 
     # Task to create silver table
@@ -64,6 +65,7 @@ with DAG(
                 "priority": "BATCH",
             }
         },
+        location=LOCATION,  # ✅ Add this line
     )
 
     # Task to create gold table
@@ -76,6 +78,7 @@ with DAG(
                 "priority": "BATCH",
             }
         },
+        location=LOCATION,  # ✅ Add this line
     )
 
 # Define dependencies
