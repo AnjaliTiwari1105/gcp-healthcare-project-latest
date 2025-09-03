@@ -102,7 +102,7 @@ def move_existing_files_to_archive(table):
 
         log_event("INFO", f"Moved {file} to {archive_path}", table=table)
         
-##------------------------------------------------------------------------------------------------------------------##
+#------------------------------------------------------------------------------------------------------------------##
 
 # Function to Get Latest Watermark from BigQuery Audit Table
 def get_latest_watermark(table_name):
