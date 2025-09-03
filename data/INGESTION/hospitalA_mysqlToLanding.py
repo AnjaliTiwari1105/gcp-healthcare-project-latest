@@ -147,7 +147,7 @@ def extract_and_save_to_landing(table, load_type, watermark_col):
 
         log_event("SUCCESS", f"✅ JSON file successfully written to gs://{GCS_BUCKET}/{JSON_FILE_PATH}", table=table)
         
-        # Insert Audit Entry
+        # Insert Audit Entry to the audit table
         audit_df = spark.createDataFrame([
             ("hospital_a_db", table, load_type, df.count(), datetime.datetime.now(), "SUCCESS")], 
             ["data_source", "tablename", "load_type", "record_count", "load_timestamp", "status"])
