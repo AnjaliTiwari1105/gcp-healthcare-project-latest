@@ -102,9 +102,9 @@ def move_existing_files_to_archive(table):
 
         log_event("INFO", f"Moved {file} to {archive_path}", table=table)
         
-#------------------------------------------------------------------------------------------------------------------##
+##------------------------------------------------------------------------------------------------------------------##
 
-## Function to Get Latest Watermark from BigQuery Audit Table
+# Function to Get Latest Watermark from BigQuery Audit Table
 def get_latest_watermark(table_name):
     query = f"""
         SELECT MAX(load_timestamp) AS latest_timestamp
@@ -147,7 +147,7 @@ def extract_and_save_to_landing(table, load_type, watermark_col):
 
         log_event("SUCCESS", f"✅ JSON file successfully written to gs://{GCS_BUCKET}/{JSON_FILE_PATH}", table=table)
         
-        # Insert Audit Entry to the audit table
+        # Insert Audit Entry
         audit_df = spark.createDataFrame([
             ("hospital_a_db", table, load_type, df.count(), datetime.datetime.now(), "SUCCESS")], 
             ["data_source", "tablename", "load_type", "record_count", "load_timestamp", "status"])
